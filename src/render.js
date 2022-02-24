@@ -3,10 +3,10 @@ function renderApp(input, todoList) {
 }
 
 function renderForm() {
-  return `<div class="form">
+  return `<form class="form">
     <input type="text" data-element="addTodoInput">
-    <button data-element="addTodoButton">Add</button>
-  </div>`;
+    <button type="submit" data-element="addTodoButton">Add</button>
+  </form>`;
 }
 
 function renderTodos(todoItems) {
