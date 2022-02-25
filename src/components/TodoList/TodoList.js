@@ -9,7 +9,7 @@ const TodoList = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        let filterTodos=[]
+      let filterTodos=[]
       if(filter === 'showAll'){
         filterTodos = todos;
       }else if(filter === 'completed'){
