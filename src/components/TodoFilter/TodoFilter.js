@@ -13,8 +13,8 @@ const TodoFilter = () => {
     return(
         <div className='filter_list'>
             <select onChange={handleChange}>
-                {filterList.map(option =>
-                    <option value={option.value}>{option.label}</option>
+                {filterList.map((option, index) =>
+                    <option key={index} value={option.value}>{option.label}</option>
                 )}
             </select>
         </div>
