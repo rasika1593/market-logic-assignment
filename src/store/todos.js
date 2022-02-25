@@ -46,7 +46,7 @@ export default (state = initialState, action) => {
       }
 
     case 'TOGGLE':
-      let data= state.todos.map((todo) => {
+      let data = state.todos.map((todo) => {
         if (todo.id === action.id) {
           todo.completed = !todo.completed;
         }
@@ -58,7 +58,7 @@ export default (state = initialState, action) => {
       }
      
     case 'FILTER':
-      let filterValue=action.value;
+      let filterValue = action.value;
       return {
         ...state,
         filter: filterValue,
