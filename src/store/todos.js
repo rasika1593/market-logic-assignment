@@ -6,7 +6,7 @@ const uniqueId = {
   }
 };
 
-export const initialState = {
+ const initialState = {
   todos: [
     {
       id: uniqueId.get(),
@@ -35,23 +35,35 @@ export const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'ADD':
-      state.todos.push({
+      let newData= [...state.todos, {
         id: uniqueId.get(),
         title: action.title,
         completed: false
-      });
-      break;
+      }];
+      return {
+        ...state,
+        todos: newData,
+      }
+
     case 'TOGGLE':
-      for (let todo of state.todos) {
+      let data= state.todos.map((todo) => {
         if (todo.id === action.id) {
           todo.completed = !todo.completed;
-          break;
         }
+        return todo;
+      });
+      return {
+        ...state,
+        todos: data,
       }
-      break;
+     
     case 'FILTER':
-      console.log("action")
-      state.filter = action.value;
-      break;
+      let filterValue=action.value;
+      return {
+        ...state,
+        filter: filterValue,
+      }
+      
+    default: return state;
   }
 }

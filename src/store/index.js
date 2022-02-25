@@ -1,4 +1,7 @@
-import createStore from './createStore';
-import todoReducer, { initialState as todoInitialState } from './todos';
+import { combineReducers, createStore } from "redux";
+import todos from './todos';
+/*
+currently we dont have multiple reducer so havent use combinereducer otherwise we can use combineReducers
 
-export default createStore(todoReducer, todoInitialState);
+*/
+export default createStore(todos);

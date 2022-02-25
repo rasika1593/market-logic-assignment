@@ -19,6 +19,7 @@ function renderTodoItem(todo) {
     ${todo.title}
   </li>`;
 }
+
 function renderFilter(filter){
   return `<div class="form">
             <select selected="${filter}" data-element="filterDropdown" >
@@ -29,6 +30,7 @@ function renderFilter(filter){
             </select>
           </div>`;
 }
+
 function filtertData(state){
   let filterTodos=[]
       if(state.filter==='showAll'){
@@ -47,11 +49,9 @@ function filtertData(state){
 }
 
 export default (element, state) => {
-  //const todoItems = state.todos.map(renderTodoItem).join('');
   element.innerHTML = renderApp(
     renderForm(),
     renderFilter(state.filter),
-    //renderTodos(todoItems)
     filtertData(state)
   );
 }
