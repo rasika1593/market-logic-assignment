@@ -28,7 +28,8 @@ export const initialState = {
       title: 'JS-202',
       completed: false
     }
-  ]
+  ],
+  filter:'showAll'
 };
 
 export default (state = initialState, action) => {
@@ -47,6 +48,10 @@ export default (state = initialState, action) => {
           break;
         }
       }
+      break;
+    case 'FILTER':
+      console.log("action")
+      state.filter = action.value;
       break;
   }
 }

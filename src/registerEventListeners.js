@@ -18,3 +18,6 @@ addListener('click', '[data-element="toggleTodo"]', e => {
   const id = Number(e.target.dataset.id);
   store.dispatch(todoActions.toggle(id));
 });
+addListener('change', '[data-element="filterDropdown"]', (e) => {
+ store.dispatch(todoActions.filter(e.target.value));
+}); 
