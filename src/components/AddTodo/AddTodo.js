@@ -7,9 +7,11 @@ const AddTodo = () => {
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
+       
         setNewTodo(e.target.value);
     }
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         dispatch(add(newTodo));
     }
     return(
